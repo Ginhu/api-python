@@ -26,3 +26,10 @@ def testa_libs_acessivel(api: TestClient):
     ret_json = ret.json()
     agora = datetime.now()
     assert agora.date().isoformat() in ret_json['agora']
+
+
+def testa_rota_teste(api: TestClient):
+    url = '/teste/teste'
+    ret = api.get(url)
+    assert ret.status_code == 200
+    assert ret.json() == {'teste': 'ok'}

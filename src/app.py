@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from rotas.router_teste import router_teste
 
 from src.libs import dh
 
 app = FastAPI()
+
+app.include_router(router_teste)
 
 
 @app.get('/')
