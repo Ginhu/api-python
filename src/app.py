@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from rotas.router_teste import router_teste
-
-from src.libs import dh
+from webhook_facebook.routes.webhook_facebook_route import router_facebook
 
 app = FastAPI()
 
 app.include_router(router_teste)
+app.include_router(router_facebook)
 
 
 @app.get('/')
@@ -16,4 +16,4 @@ def read_root():
 
 @app.get('/agora')
 def agora():
-    return JSONResponse({'agora': dh.hoje_zero_hora_iso()})
+    return JSONResponse({'status': "ok"})
