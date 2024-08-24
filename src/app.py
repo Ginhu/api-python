@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-from rotas.router_teste import router_teste
-from webhook_facebook.routes.webhook_facebook_route import router_facebook
+from router.router_teste import router_teste
+from router.webhook_facebook_route import router_facebook
 
 app = FastAPI()
 
